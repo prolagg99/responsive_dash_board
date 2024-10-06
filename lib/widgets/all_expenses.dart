@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/models/expense_model.dart';
+import 'package:responsive_dash_board/utils/app_images.dart';
+import 'package:responsive_dash_board/widgets/all_expenses_body.dart';
 import 'package:responsive_dash_board/widgets/all_expenses_header.dart';
+import 'package:responsive_dash_board/widgets/all_expenses_item.dart';
 
 class AllExpenses extends StatelessWidget {
   const AllExpenses({super.key});
@@ -12,9 +16,17 @@ class AllExpenses extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: const Column(
+      child: Column(
         children: [
-          AllExpensesHeader(),
+          const AllExpensesHeader(),
+          AllExpensesItem(
+            expenseModel: ExpenseModel(
+              title: 'Balance',
+              amount: r'$20,129',
+              icon: Assets.imagesBalance,
+              date: DateTime.now(),
+            ),
+          ),
         ],
       ),
     );

@@ -16,7 +16,7 @@ class AllExpensesHeader extends StatelessWidget {
           'All Expenses',
           style: AppStyles.styleSemiBold20,
         ),
-        RangeOptionsButton()
+        RangeOptionsButton(),
       ],
     );
   }
