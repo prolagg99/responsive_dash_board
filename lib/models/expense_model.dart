@@ -1,10 +1,10 @@
 class ExpenseModel {
   final String icon;
   final String title;
-  final DateTime date;
+  final String date;
   final String amount;
 
-  ExpenseModel({
+  const ExpenseModel({
     required this.icon,
     required this.title,
     required this.date,
