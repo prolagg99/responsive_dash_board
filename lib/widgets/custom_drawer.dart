@@ -12,29 +12,46 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: const Column(
-        children: [
-          UserInfoListTile(
-            image: Assets.imagesAvatar3,
-            title: 'Lekan Okeowo',
-            subTitle: 'demo@gmail.com',
+      child: const CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: UserInfoListTile(
+              image: Assets.imagesAvatar3,
+              title: 'Lekan Okeowo',
+              subTitle: 'demo@gmail.com',
+            ),
           ),
-          SizedBox(height: 8),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 8),
+          ),
           DrawerItemListView(),
-          Expanded(child: SizedBox()),
-          InActiveDrawerItem(
-            drawerItemModel: DrawerItemModel(
-              title: 'Setting system',
-              image: Assets.imagesSetting,
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Expanded(child: SizedBox()),
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: InActiveDrawerItem(
+                    drawerItemModel: DrawerItemModel(
+                      title: 'Setting system',
+                      image: Assets.imagesSetting,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: InActiveDrawerItem(
+                    drawerItemModel: DrawerItemModel(
+                      title: 'Logout accuont',
+                      image: Assets.imagesLogout,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 48),
+              ],
             ),
           ),
-          InActiveDrawerItem(
-            drawerItemModel: DrawerItemModel(
-              title: 'Logout accuont',
-              image: Assets.imagesLogout,
-            ),
-          ),
-          SizedBox(height: 48),
         ],
       ),
     );
