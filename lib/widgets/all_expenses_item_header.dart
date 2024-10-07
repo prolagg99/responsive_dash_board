@@ -6,9 +6,12 @@ class AllExpensesItemHeader extends StatelessWidget {
   const AllExpensesItemHeader({
     super.key,
     required this.icon,
+    this.iconBackgroundColor,
+    this.iconColor,
   });
 
   final String icon;
+  final Color? iconBackgroundColor, iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +21,26 @@ class AllExpensesItemHeader extends StatelessWidget {
           width: 60,
           height: 60,
           padding: const EdgeInsets.all(14),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Color(0xffFAFAFA),
+            color: iconBackgroundColor ?? const Color(0xffFAFAFA),
           ),
           child: SvgPicture.asset(
             icon,
+            colorFilter: ColorFilter.mode(
+              iconColor ?? const Color(0xff4EB7F2),
+              BlendMode.srcIn,
+            ),
           ),
         ),
         const Spacer(),
-        SvgPicture.asset(Assets.imagesArrowRight),
+        SvgPicture.asset(
+          Assets.imagesArrowRight,
+          colorFilter: ColorFilter.mode(
+            iconColor ?? const Color(0xff4EB7F2),
+            BlendMode.srcIn,
+          ),
+        ),
       ],
     );
   }

@@ -1,45 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/models/expense_model.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
-import 'package:responsive_dash_board/widgets/all_expenses_item_header.dart';
+import 'package:responsive_dash_board/widgets/inactive_and_active_all_expenses_item.dart';
 
 class AllExpensesItem extends StatelessWidget {
-  const AllExpensesItem({super.key, required this.expenseModel});
+  const AllExpensesItem(
+      {super.key, required this.expenseModel, required this.isSelected});
 
   final ExpenseModel expenseModel;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      decoration: ShapeDecoration(
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Color(0xffFAFAFA), width: 1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AllExpensesItemHeader(icon: expenseModel.icon),
-          const SizedBox(height: 34),
-          Text(
-            expenseModel.title,
-            style: AppStyles.styleMeduim16,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            expenseModel.date.toString(),
-            style: AppStyles.styleRegular14,
-          ),
-          const SizedBox(height: 16),
-          Text(
-            expenseModel.amount,
-            style: AppStyles.styleSemiBold24,
-          ),
-          // AllExpensesItemBody(),
-        ],
-      ),
-    );
+    return isSelected
+        ? ActiveAllExpenses(
+            expenseModel: expenseModel,
+          )
+        : InActiveAllExpenses(
+            expenseModel: expenseModel,
+          );
   }
 }
