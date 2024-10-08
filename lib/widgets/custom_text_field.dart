@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         fillColor: const Color(0xffFAFAFA),
-        hintText: "Type customer name",
+        hintText: hint,
         hintStyle: AppStyles.styleRegular16.copyWith(
           color: const Color(0xffAAAAAA),
         ),
