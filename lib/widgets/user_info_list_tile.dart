@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_dash_board/models/transaction_model.dart';
+import 'package:responsive_dash_board/models/user_info_model.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
 
 class UserInfoListTile extends StatelessWidget {
@@ -9,7 +9,7 @@ class UserInfoListTile extends StatelessWidget {
     required this.transactionModel,
   });
 
-  final TransactionModel transactionModel;
+  final UserInfoModel transactionModel;
 
   @override
   Widget build(BuildContext context) {
