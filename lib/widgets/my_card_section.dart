@@ -3,7 +3,6 @@ import 'package:responsive_dash_board/utils/app_styles.dart';
 import 'package:responsive_dash_board/widgets/custom_background_countainer.dart';
 import 'package:responsive_dash_board/widgets/dots_indicator.dart';
 import 'package:responsive_dash_board/widgets/my_cards_page_view.dart';
-import 'package:responsive_dash_board/widgets/transaction_history.dart';
 
 class MyCardSection extends StatefulWidget {
   const MyCardSection({super.key});
@@ -48,11 +47,6 @@ class _MyCardSectionState extends State<MyCardSection> {
           DotsIndicator(
             currentPageIndex: currentPageIndex,
           ),
-          const Divider(
-            height: 40,
-            color: Color(0xffF1F1F1),
-          ),
-          const TransactionHistory(),
         ],
       ),
     );

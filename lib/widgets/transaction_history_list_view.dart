@@ -1,30 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/user_info_model.dart';
-import 'package:responsive_dash_board/utils/app_images.dart';
+import 'package:responsive_dash_board/models/transaction_model.dart';
+import 'package:responsive_dash_board/widgets/transaction_item.dart';
 
 class TransactionHistoryListView extends StatelessWidget {
   const TransactionHistoryListView({super.key});
 
-  // static const items = [
-  //   UserInfoModel(
-  //     title: "Cash Withdrawal",
-  //     subtitle: "13 Apr, 2022",
-  //     icon: Assets.imagesAvatar1,
-  //   ),
-  //   UserInfoModel(
-  //     title: "Landing Page project",
-  //     subtitle: "13 Apr, 2022 at 3:30 PM",
-  //     icon: Assets.imagesAvatar2,
-  //   ),
-  //   UserInfoModel(
-  //     title: "Juni Mobile App project",
-  //     subtitle: "13 Apr, 2022 at 3:30 PM",
-  //     icon: Assets.imagesAvatar1,
-  //   ),
-  // ];
+  static const items = [
+    TransactionModel(
+      title: "Cash Withdrawal",
+      date: "13 Apr, 2022",
+      amount: r"$20,129",
+      isWitrhdrawal: true,
+    ),
+    TransactionModel(
+      title: "Landing Page project",
+      date: "13 Apr, 2022 at 3:30 PM",
+      amount: r"$2,000",
+      isWitrhdrawal: false,
+    ),
+    TransactionModel(
+      title: "Juni Mobile App project",
+      date: "13 Apr, 2022 at 3:30 PM",
+      amount: r"$20,129",
+      isWitrhdrawal: false,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return TransactionItem(transactionModel: items[index]);
+      },
+    );
   }
 }

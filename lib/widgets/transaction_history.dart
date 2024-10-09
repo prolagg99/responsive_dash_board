@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/models/transaction_model.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
 import 'package:responsive_dash_board/widgets/transaction_history_header.dart';
-import 'package:responsive_dash_board/widgets/transaction_item.dart';
+import 'package:responsive_dash_board/widgets/transaction_history_list_view.dart';
 
 class TransactionHistory extends StatelessWidget {
   const TransactionHistory({super.key});
@@ -22,14 +21,7 @@ class TransactionHistory extends StatelessWidget {
                   .copyWith(color: const Color(0xffAAAAAA)),
             ),
             const SizedBox(height: 16),
-            const TransactionItem(
-              transactionModel: TransactionModel(
-                title: "title",
-                date: "subtitle",
-                amount: r"$20,129",
-                isWitrhdrawal: false,
-              ),
-            ),
+            const TransactionHistoryListView(),
           ],
         ),
       ],
