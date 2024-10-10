@@ -38,7 +38,7 @@ class MyCard extends StatelessWidget {
                         style: AppStyles.styleRegular16
                             .copyWith(color: Colors.white),
                       ),
-                      const Text(
+                      Text(
                         'Syah Bandi',
                         style: AppStyles.styleMeduim20,
                       ),

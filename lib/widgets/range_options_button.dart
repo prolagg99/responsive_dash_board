@@ -21,7 +21,7 @@ class RangeOptionsButton extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Text(
+          Text(
             'Monthly',
             style: AppStyles.styleMeduim16,
           ),
