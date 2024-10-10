@@ -19,13 +19,21 @@ class UserInfoListTile extends StatelessWidget {
       child: Center(
         child: ListTile(
           leading: SvgPicture.asset(transactionModel.icon),
-          title: Text(
-            transactionModel.title,
-            style: AppStyles.styleSemiBold16(context),
+          title: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              transactionModel.title,
+              style: AppStyles.styleSemiBold16(context),
+            ),
           ),
-          subtitle: Text(
-            transactionModel.subtitle,
-            style: AppStyles.styleRegular12(context),
+          subtitle: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              transactionModel.subtitle,
+              style: AppStyles.styleRegular12(context),
+            ),
           ),
         ),
       ),
